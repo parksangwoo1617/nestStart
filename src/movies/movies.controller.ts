@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Req, Res } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity'
 import { CreateMovieDto } from './dto/create-movie.dto'
@@ -10,6 +10,7 @@ export class MoviesController {
     constructor(private readonly moviesService: MoviesService) {}
     @Get()
     getAll(): Movie[] {
+
         return this.moviesService.getAll();
     }
 
